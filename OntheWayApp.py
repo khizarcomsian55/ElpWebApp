@@ -77,7 +77,7 @@ database = st.sidebar.text_input("Database", placeholder="ElpWebData")
 # Fetch data function
 def fetch_data(server, database):
     try:
-        conn_str = f"mssql+pyodbc://sa:2avoid%hunzawb@{server}/{database}?driver=ODBC+Driver+17+for+SQL+Server&Encrypt=yes&TrustServerCertificate=yes"
+        conn_str = f"mssql+pyodbc://sa:2avoid%hunzawb@{server}/{database}?driver=ODBC+Driver+17+for+SQL+Server&Encrypt=yes&TrustServerCertificate=yes&timeout=30"
         engine = create_engine(conn_str)
         query = """
         SELECT DateofDeparture, LpCode,
