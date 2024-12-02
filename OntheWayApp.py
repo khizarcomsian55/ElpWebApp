@@ -3,6 +3,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 import plotly.express as px
 import time
+import os
+
 
 # Set page config for layout and title
 st.set_page_config(
@@ -71,6 +73,8 @@ st.write("This Application is Designed for Evaluation of ELP On The Way Vehicles
 
 # Sidebar for database connection parameters
 st.sidebar.header("Database Connection")
+server = os.getenv('server')
+database = os.getenv('database')
 server = st.sidebar.text_input("Server", placeholder="10.10.0.51:1433")
 database = st.sidebar.text_input("Database", placeholder="ElpWebData")
 
